@@ -13,8 +13,8 @@ exports.verify = async (req, res) => {
     }
 
     // Check if the last digit is 7
-    if (codeStr[5] !== "7") {
-      return res.status(400).json({ message: "The last digit must be 7." });
+    if (codeStr[5] === "7") {
+      return res.status(400).json({ message: "The last digit can not be 7." });
     }
 
     // If all checks pass, return success
